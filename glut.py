@@ -55,6 +55,6 @@ class Glut():
     def register_keyboard_handler(self, handler: Callable[[str, int, int], None]) -> None:
         self.normal_keyboard_handler = handler
     
+    
     def register_mouse_handler(self, handler: Callable[[str, str, int, int], None]) -> None:
         self.mouse_handler = handler
-        # glutMouseFunc(mouse)

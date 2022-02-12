@@ -14,7 +14,6 @@ class CylinderMap():
         self.number_of_circles = number_of_circles
         self.big_radius = big_radius
         self.vertexes_per_circle = vertexes_per_circle
-        # self.circles = None
         self.current_rotation_speed = 0
         self.rotation_speed = rotation_speed
 
@@ -23,10 +22,9 @@ class CylinderMap():
         for i in range(number_of_circles):
             r = big_radius - (big_radius * i) / number_of_circles
             z_pos = (number_of_circles - i**2) + 4
-            # if i == 0:
-            #     print(z_pos)
             circles.append(shape_circle(r, z_pos, vertexes_per_circle))
         self.circles = circles
+
 
 
     def draw(self) -> None:
@@ -68,6 +66,7 @@ class CylinderMap():
         glPopMatrix()
 
     
+
     def _velocity_rings(self) -> List[Tuple[float]]:
         rings = list()
         MOD = 2
@@ -94,6 +93,7 @@ class CylinderMap():
         return rings
     
 
+
     def enemy(self):
         MOD = 8
         number_of_rings = self.number_of_circles
@@ -113,7 +113,6 @@ class CylinderMap():
         # Circle that grows over time
         r = cm(res, 0, MOD - 1, r_min, r_max)
         z = cm(res, 0, MOD - 1, z_min, z_max)
-        # rings.append(shape_circle(r, z, self.vertexes_per_circle))
 
         glPushMatrix()
         # glRotatef(self.current_rotation_speed, 0, 1, 0)
